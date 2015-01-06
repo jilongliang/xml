@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Articles>
+	<item category='language'>
+		<Title>Java</Title>
+		<Description>跨平台</Description>
+	</item>
+	<item>
+		<Title>C#</Title>
+		<Description>跨语言</Description>
+	</item>
+</Articles>

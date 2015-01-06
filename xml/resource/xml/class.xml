@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+	<student>
+		<!-- classId -->
+		<classId>第168個班級</classId>
+		<userName>雲浮東升布藝</userName>
+	</student>
+	<student>
+		<!-- classId -->
+		<classId>第188個班級</classId>
+		<userName>廣東省雲浮東升布藝</userName>
+	</student>
+</class>
