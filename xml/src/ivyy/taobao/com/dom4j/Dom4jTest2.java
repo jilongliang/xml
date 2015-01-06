@@ -115,7 +115,7 @@ public class Dom4jTest2 {
 		org.dom4j.Document document=null;
 		//从api上面解析
 		if(flg.equals("URL")){
-			String url = UrlUtils.getBaiduMapUrl("E75eb6843e9caa111de84c2460ca68cd", "39.983424,116.322987", "xml");
+			String url = UrlUtils.getBaiduMapUrl("你的key", "39.983424,116.322987", "xml");
 			document = saxReader.read(url);
 		//从文件上面的xml解析
 		}else if(flg.equals("FILE")){

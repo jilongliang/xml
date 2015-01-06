@@ -31,12 +31,28 @@ public class JsoupMap {
 		String Encodeing="GBK";
 		//List<Pois> list=JsoupReadXml("URL",Encodeing);//从api读取
 
+		//------------------------------可以將這些數據保存到數據庫-------------------
 		List<Pois> list=JsoupReadXml("FILE",Encodeing);//从本地的文件读取
 		for (Iterator iterator = list.iterator(); iterator.hasNext();) {
 			Pois pois = (Pois) iterator.next();
-			System.out.println(pois.getAddr());
 			
+			//System.out.println(pois.getAddr());
 			
+			//------------------------------Address-----------------
+			
+			List<Address> listAdds=pois.getAddress();
+			for (Iterator iterator2 = listAdds.iterator(); iterator2.hasNext();) {
+				Address address = (Address) iterator2.next();
+				System.out.println(address.getCity());
+			}
+			
+			//------------------------------Location-----------------
+			List<Location> locations = pois.getLocations();
+			
+			for (Iterator iterator2 = locations.iterator(); iterator2.hasNext();) {
+				Location location = (Location) iterator2.next();
+				System.out.println(location.getFormattedAddress());
+			}
 			
 		}
 	}
@@ -48,7 +64,7 @@ public class JsoupMap {
 	private static List<Pois> JsoupReadXml(String flg,String Encodeing) throws Exception{
 		List<Pois> list=new ArrayList<Pois>();
 		
-		String url = UrlUtils.getBaiduMapUrl("E75eb6843e9caa111de84c2460ca68cd", "39.983424,116.322987", "xml");
+		String url = UrlUtils.getBaiduMapUrl("你的key", "39.983424,116.322987", "xml");
 		org.jsoup.nodes.Document doc=null;
 		if(flg.equals("URL")){
 			  doc=Jsoup.connect(url).get();//网络连接
